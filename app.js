@@ -1,7 +1,10 @@
+// Iteration 1
+
 var rover = {
 	direction: "N",
 	x: 0,
 	y: 0,
+// Iteration 5
 	travelog: [];
 }
 
@@ -10,7 +13,7 @@ var roverY = rover.y;
 var roverX = rover.x;
 
 
-
+// Iteration 4
 function commands(stuff) {
 for (var i = 0; i < stuff.length; i++) {
 
@@ -32,7 +35,7 @@ switch (letter) {
 
 commands("rffrfflfrff");
 
-
+// Iteration 3
 function moveForward() {
 switch (roverDir) {
 	case "N":
@@ -51,7 +54,7 @@ switch (roverDir) {
 return "X is: " + roverX + ", Y is: " + roverY;
 }
 
-
+// Iteration 2
 function turnRight() {
 switch (roverDir) {
 	case "N":
