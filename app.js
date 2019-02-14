@@ -19,15 +19,18 @@ for (var i = 0; i < stuff.length; i++) {
 
 var letter = stuff.charAt(i);
 
+console.log(travelog);
+var travelog = [];
+
 switch (letter) {
 	case "f":
-	console.log(moveForward());
+	travelog.push(moveForward());
 	break;
 	case "r":
-	console.log(turnRight());
+	travelog.push(turnRight());
 	break;
 	case "l":
-	console.log(turnLeft());
+	travelog.push(turnLeft());
 }
 }
 }
