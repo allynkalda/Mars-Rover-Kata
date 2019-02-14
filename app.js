@@ -92,28 +92,3 @@ switch (roverDir) {
 }
 return roverDir;
 }
-
-// These are from first function
-
-
-
-
-
-
-
-
-
-
-
-var board = [
-  [null, null, null, null, null, null, null, null, null,null],
-  [null, null, null, null, null, null, null, null, null,null],
-  [null, null, null, null, null, null, null, null, null,null],
-  [null, null, null, null, null, null, null, null, null,null],
-  [null, null, null, null, null, null, null, null, null,null],
-  [null, null, null, null, null, null, null, null, null,null],
-  [null, null, null, null, null, null, null, null, null,null],
-  [null, null, null, null, null, null, null, null, null,null],
-  [null, null, null, null, null, null, null, null, null,null],
-  [null, null, null, null, null, null, null, null, null,null],
-];
