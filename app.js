@@ -1,44 +1,41 @@
-// Iteration 1
-
 var rover = {
 	direction: "N",
 	x: 0,
 	y: 0,
-// Iteration 5
-	travelog: [];
+	travelog: [],
 }
 
 var roverDir = rover.direction;
 var roverY = rover.y;
 var roverX = rover.x;
 
+// Iteration 5
 
-// Iteration 4
+console.log(rover["travelog"]);
+
 function commands(stuff) {
 for (var i = 0; i < stuff.length; i++) {
 
 var letter = stuff.charAt(i);
 
-console.log(travelog);
-var travelog = [];
 
 switch (letter) {
 	case "f":
-	travelog.push(moveForward());
+rover["travelog"].push(moveForward());
 	break;
 	case "r":
-	travelog.push(turnRight());
+	console.log(turnRight());
 	break;
 	case "l":
-	travelog.push(turnLeft());
-}
-}
+	console.log(turnLeft());
 }
 
+}
+}
 
 commands("rffrfflfrff");
 
-// Iteration 3
+
 function moveForward() {
 switch (roverDir) {
 	case "N":
@@ -54,10 +51,10 @@ switch (roverDir) {
 	roverX += 1;
 
 }
-return "X is: " + roverX + ", Y is: " + roverY;
+return "X: " + roverX + ", Y: " + roverY;
 }
 
-// Iteration 2
+
 function turnRight() {
 switch (roverDir) {
 	case "N":
