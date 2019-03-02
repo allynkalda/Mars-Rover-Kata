@@ -9,9 +9,12 @@ var roverDir = rover.direction;
 var roverY = rover.y;
 var roverX = rover.x;
 
-// Iteration 5
+// Input command:
 
-console.log(rover["travelog"]);
+commands("rfbfffffffffffffff");
+
+console.log(rover.travelog);
+
 
 function commands(stuff) {
 for (var i = 0; i < stuff.length; i++) {
@@ -19,40 +22,48 @@ for (var i = 0; i < stuff.length; i++) {
 var letter = stuff.charAt(i);
 
 
+
 switch (letter) {
 	case "f":
-rover["travelog"].push(moveForward());
+	checkGrid();
 	break;
 	case "r":
-	console.log(turnRight());
+	turnRight();
 	break;
 	case "l":
-	console.log(turnLeft());
-}
-
-}
-}
-
-commands("rffrfflfrff");
-
-
-function moveForward() {
-switch (roverDir) {
-	case "N":
-	roverY -= 1;
+	turnLeft();
+	case "b":
+	checkGrid();
 	break;
-	case "S": 
-	roverY += 1;
-	break;
-	case "W": 
-	roverX -= 1;
-	break;
-	case "E": 
-	roverX += 1;
+	default:
+	return;
+			}
+		}
 
+function move() {
+	if (letter === "f") {
+		rover.travelog.push(moveForward());
+	} else if (letter === "b") {
+		rover.travelog.push(moveBackward());
+		}
+	}
+
+	// alerts when rover X or Y runs off grid
+
+function checkGrid() {
+	if (roverX > 9) {
+		alert("Rover has run off grid!");
+		return;
+	} else if (roverY > 9) {
+		alert("Rover has run off grid!");
+		return;
+	} else {
+		move();
+	}
 }
-return "X: " + roverX + ", Y: " + roverY;
-}
+
+
+}		
 
 
 function turnRight() {
@@ -88,4 +99,45 @@ switch (roverDir) {
 	roverDir = "N";
 }
 return roverDir;
+}
+
+function moveForward() {
+
+switch (roverDir) {
+	case "N":
+	roverY -= 1;
+	break;
+	case "S": 
+	roverY += 1;
+	break;
+	case "W": 
+	roverX -= 1;
+	break;
+	case "E": 
+	roverX += 1;
+
+}
+return "X: " + roverX + ", Y: " + roverY;
+
+}
+
+
+function moveBackward() {
+
+switch (roverDir) {
+	case "N":
+	roverY += 1;
+	break;
+	case "S": 
+	roverY -= 1;
+	break;
+	case "W": 
+	roverX += 1;
+	break;
+	case "E": 
+	roverX -= 1;
+
+}
+return "X: " + roverX + ", Y: " + roverY;
+
 }
