@@ -9,9 +9,23 @@ var roverDir = rover.direction;
 var roverY = rover.y;
 var roverX = rover.x;
 
+
+var board = [
+  [null, "S", null, null, null, "S", null, null, null, null],
+  ["S", null, null, "S", null, null, null, null, null, null],
+  [null, null, null, "S", null, null, null, null, null, null],
+  [null, null, null, "S", null, null, null, null, null, null],
+  [null, null, null, "S", null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null],
+
+];
 // Input command:
 
-commands("rfbfffffffffffffff");
+commands("rfbfffff");
 
 console.log(rover.travelog);
 
@@ -20,7 +34,6 @@ function commands(stuff) {
 for (var i = 0; i < stuff.length; i++) {
 
 var letter = stuff.charAt(i);
-
 
 
 switch (letter) {
@@ -40,14 +53,28 @@ switch (letter) {
 			}
 		}
 
-function move() {
-	if (letter === "f") {
+function obstacle() {
+
+
+	if (board[roverX][roverY] === "S") {
+		console.log("Obstacle found at X: " + roverX + " and Y: " + roverY);
+	} else if (letter === "f") {
 		rover.travelog.push(moveForward());
 	} else if (letter === "b") {
 		rover.travelog.push(moveBackward());
+	}
+}
+
+/*
+	if (letter === "f") {
+		obstacle();
+		rover.travelog.push(moveForward());
+	} else if (letter === "b") {
+		obstacle();
+		rover.travelog.push(moveBackward());
 		}
 	}
-
+*/
 	// alerts when rover X or Y runs off grid
 
 function checkGrid() {
@@ -58,7 +85,7 @@ function checkGrid() {
 		alert("Rover has run off grid!");
 		return;
 	} else {
-		move();
+		obstacle();
 	}
 }
 
@@ -117,8 +144,8 @@ switch (roverDir) {
 	roverX += 1;
 
 }
-return "X: " + roverX + ", Y: " + roverY;
 
+return "X: " + roverX + ", Y: " + roverY;
 }
 
 
@@ -138,6 +165,6 @@ switch (roverDir) {
 	roverX -= 1;
 
 }
-return "X: " + roverX + ", Y: " + roverY;
 
+return "X: " + roverX + ", Y: " + roverY;
 }
